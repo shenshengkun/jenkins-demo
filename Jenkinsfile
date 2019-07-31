@@ -19,7 +19,6 @@ node('jnlp') {
     stage('Push') {
         echo "4.Push Docker Image Stage"
             sh "docker push registry.gag.cn/private/sy:${build_tag}"
-        }
     }
     stage('Deploy') {
         echo "5. Deploy Stage"
@@ -30,4 +29,3 @@ node('jnlp') {
         sh "sed -i 's/<BRANCH_NAME>/${env.BRANCH_NAME}/' k8s.yaml"
         sh "kubectl apply -f k8s.yaml --record"
     }
-}
