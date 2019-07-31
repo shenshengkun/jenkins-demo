@@ -26,3 +26,4 @@ node('jnlp') {
         sh "sed -i 's/<BRANCH_NAME>/${env.BRANCH_NAME}/' k8s.yaml"
         sh "kubectl apply -f k8s.yaml --record"
     }
+}
