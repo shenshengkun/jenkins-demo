@@ -17,7 +17,7 @@ node('jnlp') {
         sh "docker build -t registry.gag.cn/private/sy:${build_tag} ."
     }
     stage('Push') {
-        echo "4.Push Docker Image Stage
+        echo "4.Push Docker Image Stage"
             sh "docker push registry.gag.cn/private/sy:${build_tag}"
         }
     }
